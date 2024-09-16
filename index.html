@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rajeev's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/c9840071ff.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1 class="logo">Rajeev's Portfolio</h1>
+                <ul id=sideMenu>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-x" onclick="closeMenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Data Scientist</p>
+                <h1>Hi, I'm <span>Rajeev</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Images/WaltzOtheIrish.jpg">
+                </div>
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I have no idea what im doing. I am a Data Scientist. Or so I hear.
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>- Rank 1 Yasuo (not really)</span></li>
+                            <li><span>- Web design ????</span></li>
+                            <li><span>- I can make graphs sometimes</span></li>
+                            <li><span>- Video editing goat</span></li>
+                            <li><span>- I can actually use excel pretty good</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>- CO-OP at KGS Research</span></li>
+                            <li><span>- Being the goat himself</span></li>
+                            <li><span>- Experience experiencing experiences</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>- PL-900 Power Platform Certification</span></li>
+                            <li><span>- Current Data Science Undergrad Student (In progress)</span></li>
+                            <li><span>- Google Data Analytics Certification (In progress)</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------portfolio-------------->
+    <!-- Portfolio Section -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="Images/SPY.png" alt="SPY Project Image">
+                    <div class="layer">
+                        <h3>SPY Project</h3>
+                        <p>My insights from using historical SPY data.</p>
+                        <!-- Icon wrapped in anchor tag -->
+                        <a href="spy.html" class="icon-link">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!---contact-->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane contact-icon"></i><span
+                            class="contact-text">rajeevchoudhari0912@gmail.com</span></p>
+                    <p><i class="fas fa-phone-square-alt contact-icon"></i><span
+                            class="contact-text">704-953-8157</span></p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/rajeev-choudhari-86b940219/"><i
+                                class="fab fa-linkedin social-icon"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>HIRE ME PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE PLEASE</p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        var sideMenu = document.getElementById("sideMenu"); // Fix the ID name
+
+        function showMenu() {
+            sideMenu.style.right = "0";
+            body.classList.add("menu-open");
+        }
+
+        function closeMenu() {
+            sideMenu.style.right = "-200px";
+            body.classList.add("menu-open");
+        }
+
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbymHh93MSXon7Gyeqs8SwSlVSb6P2qIUvZr9MgmW1R-VY0OR-MyHs24QO9R48MzcoF5/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function() {
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+
+</html>
